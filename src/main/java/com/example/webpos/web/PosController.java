@@ -19,26 +19,17 @@ public class PosController {
 
     @GetMapping("/")
     public String pos(Model model) {
-        posService.add("PD1",2);
+        posService.add("PD1", 2);
         model.addAttribute("products", posService.products());
         model.addAttribute("cart", posService.getCart());
         return "index";
     }
 
     @GetMapping("/add")
-    public String addByGet(@RequestParam(name="pid") String pid, Model model){
-        posService.add(pid,1);
+    public String addByGet(@RequestParam(name = "pid") String pid, Model model) {
+        posService.add(pid, 1);
         model.addAttribute("products", posService.products());
         model.addAttribute("cart", posService.getCart());
         return "index";
     }
-
-    @PostMapping("/add")
-    public String addByPost(String pid, Model model){
-
-        return "index";
-
-    }
-
-
 }

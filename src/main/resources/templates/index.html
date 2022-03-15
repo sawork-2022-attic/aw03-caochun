@@ -196,7 +196,7 @@
                     </dl>
                     <dl class="dlist-align">
                         <dt>Total:</dt>
-                        <dd class="text-right h4 b"> $215</dd>
+                        <dd class="text-right h4 b"> <span th:text="${cart.total}"></span></dd>
                     </dl>
                     <div class="row">
                         <div class="col-md-6">
@@ -221,14 +221,14 @@
     $(function () {
         //The passed argument has to be at least a empty object or a object with your desired options
         //$("body").overlayScrollbars({ });
-        $("#items").height(552);
+        $("#items").height(680);
         $("#items").overlayScrollbars({
             overflowBehavior: {
                 x: "hidden",
                 y: "scroll"
             }
         });
-        $("#cart").height(445);
+        $("#cart").height(650);
         $("#cart").overlayScrollbars({});
     });
 </script>
